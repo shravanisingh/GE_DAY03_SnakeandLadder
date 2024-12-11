@@ -3,13 +3,17 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to the Snake and Ladder Game!");
         System.out.println("Single Player at Start Position 0");
-        int posFirstPlayer = 0;
+        int posFirstPlayer = 0, count = 0;
         boolean currTurn = true;
         while(posFirstPlayer != 100){
             if(currTurn == true){
                 System.out.println("Player 1 is currently at the Position: " + posFirstPlayer);
+                // UC - 2
+                // random function used
                 int dieRolled = (int) (Math.random() * 6 + 1);
+                // UC - 3
                 System.out.println("Dice rolls by: " + dieRolled);
+                // using random to get option
                 int Option = (int) (Math.random() * 3 + 1);
                 switch(Option)
                 {
@@ -28,6 +32,7 @@ public class Main {
                         posFirstPlayer = posFirstPlayer - dieRolled;
                         break;
                 }
+                count++;
                 if(posFirstPlayer < 0){
                     posFirstPlayer = 0;
                 }
@@ -37,6 +42,7 @@ public class Main {
                 System.out.println();
             }
         }
+        System.out.println("Player 1 Rolled Dice " + count + " times");
         System.out.println("Player 1 has reached the winning Position 100");
     }
 }
