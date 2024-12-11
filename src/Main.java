@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to the Snake and Ladder Game!");
@@ -7,7 +6,7 @@ public class Main {
         int posFirstPlayer = 0;
         boolean currTurn = true;
         while(posFirstPlayer != 100){
-            if(currTurn){
+            if(currTurn == true){
                 System.out.println("Player 1 is currently at the Position: " + posFirstPlayer);
                 int dieRolled = (int) (Math.random() * 6 + 1);
                 System.out.println("Dice rolls by: " + dieRolled);
@@ -31,6 +30,9 @@ public class Main {
                 }
                 if(posFirstPlayer < 0){
                     posFirstPlayer = 0;
+                }
+                if(posFirstPlayer > 100){
+                    posFirstPlayer -= dieRolled;
                 }
                 System.out.println();
             }
